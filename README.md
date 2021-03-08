@@ -1,2 +1,2 @@
-# TIL
-그날 배운 내용들 기록
+# Today I Learned(TIL)
+
