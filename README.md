@@ -14,3 +14,6 @@
 * [[백준문제풀이] No.10250 : ACM호텔](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N10250.md)
 * [[백준문제풀이] No.1929 : 소수구하기](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N1929.md)
 * [[백준문제풀이] No.2869 : 달팽이는 올라가고 싶다.](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N2869.md)
+
+### Python
+* [sys.stdin.readline( ) 사용법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/sys.stdin.readline()%20%EC%82%AC%EC%9A%A9%EB%B2%95.md)
