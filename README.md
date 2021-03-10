@@ -11,9 +11,13 @@
 
 ## 분류
 ### Algorithm
+* [[백준문제풀이] No.2805 : 나무 자르기](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N2805.md)
+* [[백준문제풀이] No.1021 : 회전하는 큐](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N1021.md)
 * [[백준문제풀이] No.10250 : ACM호텔](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N10250.md)
 * [[백준문제풀이] No.1929 : 소수구하기](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N1929.md)
 * [[백준문제풀이] No.2869 : 달팽이는 올라가고 싶다.](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N2869.md)
 
+
 ### Python
 * [sys.stdin.readline( ) 사용법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/sys.stdin.readline()%20%EC%82%AC%EC%9A%A9%EB%B2%95.md)
+* [빈 Sequence(string, list, tuple) 확인법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/%EB%B9%84%EC%96%B4%EC%9E%88%EB%8A%94%20%EC%8B%9C%ED%80%80%EC%8A%A4(list%2Cstring%2Ctuple)%20%ED%99%95%EC%9D%B8%EB%B2%95.md)
