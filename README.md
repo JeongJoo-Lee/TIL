@@ -11,6 +11,7 @@
 
 ## 분류
 ### Algorithm
+* (210312) [[백준문제풀이] No.4948 : 베르트랑 공준](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N4948.md)
 * (210312) [[백준문제풀이] No.1011 : Fly me to the Alpha Centauri](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N1011.md)
 * (210310) [[백준문제풀이] No.1021 : 회전하는 큐](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N1021.md)
 * (210309) [[백준문제풀이] No.2805 : 나무 자르기](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N2805.md)
