@@ -1,4 +1,4 @@
-# Today I Learned(TIL)
+# 🏅 Today I Learned(TIL)
 
 * 하루동안 학습한 내용이나 개발관련 경험을 꾸미지 않더라도 최대한 남긴다.
 
@@ -11,6 +11,7 @@
 
 ## 분류
 ### Algorithm
+* (210316) [[백준문제풀이] No.1260 : DFS & BFS](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N1260.md)
 * (210315) [[백준문제풀이] No.1010 : 다리놓기](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N1010.md)
 * (210315) [[백준문제풀이] No.10773 : 제로](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N10773.md)
 * (210315) [[백준문제풀이] No.1934 : 최소공배수](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N1934.md)
@@ -30,6 +31,7 @@
 
 
 ### Python
+* (210316) [내장함수 : itertools](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/itertools.md)
 * (210315) [분기문속 분기 체크의 중요성](https://data-jj.tistory.com/37)
 * (210311) [pass, continue, break 차이](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/pass%2C%20continue%2C%20break%20%EC%B0%A8%EC%9D%B4.md)
 * (210310) [빈 Sequence(string, list, tuple) 확인법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/%EB%B9%84%EC%96%B4%EC%9E%88%EB%8A%94%20%EC%8B%9C%ED%80%80%EC%8A%A4(list%2Cstring%2Ctuple)%20%ED%99%95%EC%9D%B8%EB%B2%95.md)
