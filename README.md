@@ -11,6 +11,7 @@
 
 ## 분류
 ### Algorithm
+* (210318) [[백준문제풀이] No.2667 : 단지 번호 붙이기](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N2667.md)
 * (210317) [[백준문제풀이] No.11053 : 가장 긴 증가하는 부분 수열](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N11053.md)
 * (210317) [[백준문제풀이] No.11054 : 가장 긴 바이토닉 부분 수열](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N11054.md)
 * (210317) [[백준문제풀이] No.11866 : 요세푸스 문제 0](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N11866.md)
@@ -37,6 +38,7 @@
 
 
 ### Python
+* (210317) [zip() 함수 사용법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/zip_function_use.md)
 * (210317) [두개의 List 내부 각 자리 요소끼리의 합 구하기](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/Two_List_elements_sum.md)
 * (210316) [내장함수 : itertools](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/itertools.md)
 * (210315) [분기문속 분기 체크의 중요성](https://data-jj.tistory.com/37)
