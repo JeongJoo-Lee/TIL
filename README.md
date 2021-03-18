@@ -2,7 +2,7 @@
 
 * 하루동안 학습한 내용이나 개발관련 경험을 꾸미지 않더라도 최대한 남긴다.
 
-[namjunemy](https://github.com/namjunemy)님, [milooy](https://github.com/milooy)님의 TIL을 가이드라인 삼아 작성하였다.
+* [namjunemy](https://github.com/namjunemy)님, [milooy](https://github.com/milooy)님의 TIL을 가이드라인 삼아 작성하였다.
 
 ## 작성규칙
 * 폴더와 파일명은 영문으로 작성한다.
