@@ -37,6 +37,7 @@
 
 
 ### Python
+* (210317) [두개의 List 내부 각 자리 요소끼리의 합 구하기](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/Two_List_elements_sum.md)
 * (210316) [내장함수 : itertools](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/itertools.md)
 * (210315) [분기문속 분기 체크의 중요성](https://data-jj.tistory.com/37)
 * (210311) [pass, continue, break 차이](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/pass%2C%20continue%2C%20break%20%EC%B0%A8%EC%9D%B4.md)
