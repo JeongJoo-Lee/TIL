@@ -10,6 +10,22 @@
 * reference를 명시하고, 원작자가 참고를 허용하는 자료만 사용한다.
 
 ## 분류
+### React
+* (210322) [Redux 개념공부](https://github.com/JeongJoo-Lee/TIL/blob/main/React/Redux.md)
+* (210320) [Event-litener 구독순서](https://github.com/JeongJoo-Lee/TIL/blob/main/React/EventListener.md)
+* (210319) [Camel-Case](https://github.com/JeongJoo-Lee/TIL/blob/main/React/CamelCase.md)
+
+
+### Python
+* (210318) [zip() 함수 사용법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/zip_function_use.md)
+* (210318) [두개의 List 내부 각 자리 요소끼리의 합 구하기](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/Two_List_elements_sum.md)
+* (210316) [내장함수 : itertools](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/itertools.md)
+* (210315) [분기문속 분기 체크의 중요성](https://data-jj.tistory.com/37)
+* (210311) [pass, continue, break 차이](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/pass%2C%20continue%2C%20break%20%EC%B0%A8%EC%9D%B4.md)
+* (210310) [빈 Sequence(string, list, tuple) 확인법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/%EB%B9%84%EC%96%B4%EC%9E%88%EB%8A%94%20%EC%8B%9C%ED%80%80%EC%8A%A4(list%2Cstring%2Ctuple)%20%ED%99%95%EC%9D%B8%EB%B2%95.md)
+* (210309) [sys.stdin.readline( ) 사용법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/sys.stdin.readline()%20%EC%82%AC%EC%9A%A9%EB%B2%95.md)
+
+
 ### Algorithm
 * (210318) [[백준문제풀이] No.2667 : 단지 번호 붙이기](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N2667.md)
 * (210317) [[백준문제풀이] No.11053 : 가장 긴 증가하는 부분 수열](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N11053.md)
@@ -37,11 +53,7 @@
 * (210308) [[백준문제풀이] No.2869 : 달팽이는 올라가고 싶다.](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N2869.md)
 
 
-### Python
-* (210318) [zip() 함수 사용법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/zip_function_use.md)
-* (210318) [두개의 List 내부 각 자리 요소끼리의 합 구하기](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/Two_List_elements_sum.md)
-* (210316) [내장함수 : itertools](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/itertools.md)
-* (210315) [분기문속 분기 체크의 중요성](https://data-jj.tistory.com/37)
-* (210311) [pass, continue, break 차이](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/pass%2C%20continue%2C%20break%20%EC%B0%A8%EC%9D%B4.md)
-* (210310) [빈 Sequence(string, list, tuple) 확인법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/%EB%B9%84%EC%96%B4%EC%9E%88%EB%8A%94%20%EC%8B%9C%ED%80%80%EC%8A%A4(list%2Cstring%2Ctuple)%20%ED%99%95%EC%9D%B8%EB%B2%95.md)
-* (210309) [sys.stdin.readline( ) 사용법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/sys.stdin.readline()%20%EC%82%AC%EC%9A%A9%EB%B2%95.md)
+
+
+
+
