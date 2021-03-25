@@ -19,6 +19,9 @@
 ### CSS
 * (210324) [z-index](https://github.com/JeongJoo-Lee/TIL/blob/main/CSS/z-index.md)
 
+### JavaScript
+* (210325) [indexOf](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/indexOf.md)
+
 
 ### Python
 * (210318) [zip() 함수 사용법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/zip_function_use.md)
