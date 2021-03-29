@@ -11,6 +11,7 @@
 
 ## 분류
 ### 모던 자바스크립트 Deep Dive
+* (210329-30) [변수](https://github.com/JeongJoo-Lee/TIL/blob/main/Modern%20JavaScript(Deep_dive)/variable.md)
 * (210326) [자바스크립트란?](https://github.com/JeongJoo-Lee/TIL/blob/main/Modern%20JavaScript(Deep_dive)/What%20is%20JavaScript%3F.md)
 
 
