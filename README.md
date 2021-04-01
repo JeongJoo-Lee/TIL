@@ -28,6 +28,7 @@
 * (210324) [z-index](https://github.com/JeongJoo-Lee/TIL/blob/main/CSS/z-index.md)
 
 ### JavaScript
+* (210401) [이벤트 버블링](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/Bubbling.md)
 * (210325) [indexOf](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/indexOf.md)
 
 
