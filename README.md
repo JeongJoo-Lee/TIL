@@ -18,6 +18,7 @@
 
 
 ### React
+* (210405) [Redux와 Component 연결하기](https://github.com/JeongJoo-Lee/TIL/blob/main/React/Redux-Component-connet.md)
 * (210323) [state & props](https://github.com/JeongJoo-Lee/TIL/blob/main/React/State%2CProps.md)
 * (210322) [Redux 개념공부](https://github.com/JeongJoo-Lee/TIL/blob/main/React/Redux.md)
 * (210320) [Event-litener 구독순서](https://github.com/JeongJoo-Lee/TIL/blob/main/React/EventListener.md)
