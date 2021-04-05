@@ -24,6 +24,9 @@
 * (210320) [Event-litener 구독순서](https://github.com/JeongJoo-Lee/TIL/blob/main/React/EventListener.md)
 * (210319) [Camel-Case](https://github.com/JeongJoo-Lee/TIL/blob/main/React/CamelCase.md)
 
+### Debugging
+* (210406) [Axios 사용중 빠진 then 함수의 함정](https://github.com/JeongJoo-Lee/TIL/blob/main/Debugging/axios%26then.md)
+
 ### CSS
 * (210327) [vw, vh, vmin, vmax](https://github.com/JeongJoo-Lee/TIL/blob/main/CSS/vw%2Cvh%2Cvmin%2Cvmax.md)
 * (210324) [z-index](https://github.com/JeongJoo-Lee/TIL/blob/main/CSS/z-index.md)
