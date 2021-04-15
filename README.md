@@ -29,6 +29,7 @@
 * (210406) [Axios 사용중 빠진 then 함수의 함정](https://github.com/JeongJoo-Lee/TIL/blob/main/Debugging/axios%26then.md)
 
 ### CSS
+* (210415) [이미지 크기 조절방법 : object-fit](https://github.com/JeongJoo-Lee/TIL/blob/main/CSS/object-fit.md)
 * (210327) [vw, vh, vmin, vmax](https://github.com/JeongJoo-Lee/TIL/blob/main/CSS/vw%2Cvh%2Cvmin%2Cvmax.md)
 * (210324) [z-index](https://github.com/JeongJoo-Lee/TIL/blob/main/CSS/z-index.md)
 
