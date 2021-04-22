@@ -8,6 +8,7 @@
 * 폴더와 파일명은 영문으로 작성한다.
 * 더 많은 내용을 희망하는 부분은 [블로그](https://data-jj.tistory.com/)에 포스팅한다.
 * reference를 명시하고, 원작자가 참고를 허용하는 자료만 사용한다. 
+* 이모티콘은 [여기](https://www.webfx.com/tools/emoji-cheat-sheet/)를 활용해서 작성한다.
 
 ## 분류
 ### 모던 자바스크립트 Deep Dive
