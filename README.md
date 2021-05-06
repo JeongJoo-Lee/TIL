@@ -35,11 +35,15 @@
 * [z-index](https://github.com/JeongJoo-Lee/TIL/blob/main/CSS/z-index.md)
 
 ### JavaScript
+* [parseInt / parseFloat](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/parseInt_parseFloat.md)
+* [prompt](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/prompt.md)
+* [set()](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/set().md)
 * [이벤트 버블링](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/Bubbling.md)
 * [indexOf](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/indexOf.md)
 
 
 ### Python
+* [divmod() 함수](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/divmod().md)
 * [zip() 함수 사용법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/zip_function_use.md)
 * [두개의 List 내부 각 자리 요소끼리의 합 구하기](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/Two_List_elements_sum.md)
 * [내장함수 : itertools](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/itertools.md)
