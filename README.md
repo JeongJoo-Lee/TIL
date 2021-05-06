@@ -54,7 +54,7 @@
 
 
 ### Algorithm
-* [[Programmers] 키패드 누르기(feat. javascript](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/programmers_%ED%82%A4%ED%8C%A8%EB%93%9C%EB%88%84%EB%A5%B4%EA%B8%B0.md)
+* [[Programmers] 키패드 누르기(feat. javascript)](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/programmers_%ED%82%A4%ED%8C%A8%EB%93%9C%EB%88%84%EB%A5%B4%EA%B8%B0.md)
 * [[Programmers] 폰켓몬(feat. javascript)](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/programmers_%ED%8F%B0%EC%BC%93%EB%AA%AC.md)
 * [[백준문제풀이] No.2667 : 단지 번호 붙이기(feat. Python)](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N2667.md)
 * [[백준문제풀이] No.11053 : 가장 긴 증가하는 부분 수열(feat. Python)](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/baekjoon_N11053.md)
