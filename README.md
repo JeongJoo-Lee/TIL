@@ -19,6 +19,8 @@
 
 
 ### React
+* [PrivateRoute 만들기](https://github.com/JeongJoo-Lee/TIL/blob/main/React/PrivateRoute.md)
+* [텍스트 개행(줄바꾸기)](https://github.com/JeongJoo-Lee/TIL/blob/main/React/ChangeLine.md)
 * [프로젝트시 API 정리 활용 Tip](https://github.com/JeongJoo-Lee/TIL/blob/main/React/API_adress_manage_tip.md)
 * [Redux와 Component 연결하기](https://github.com/JeongJoo-Lee/TIL/blob/main/React/Redux-Component-connet.md)
 * [state & props](https://github.com/JeongJoo-Lee/TIL/blob/main/React/State%2CProps.md)
@@ -40,6 +42,7 @@
 * [set()](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/set().md)
 * [이벤트 버블링](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/Bubbling.md)
 * [indexOf](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/indexOf.md)
+* [disabled 활용](https://github.com/JeongJoo-Lee/TIL/blob/main/JavaScript/disabled%ED%99%9C%EC%9A%A9.md)
 
 
 ### Python
