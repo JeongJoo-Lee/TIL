@@ -1,6 +1,8 @@
 # Triangle
 * 분류 : sorting
 ## 문제 설명
+![image](https://user-images.githubusercontent.com/61656046/125969353-3e1f5f71-a627-4491-a287-25a0ac9f3129.png)
+
 ## 풀이
 ```javascript
 function solution(A) {
