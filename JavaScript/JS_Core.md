@@ -15,8 +15,8 @@
 
 ### 코드예시
 ```javascript
-let one = 1;
-let two = 2;
+var one = 1;
+var two = 2;
 
 one = two;
 
@@ -61,8 +61,8 @@ console.log(typeof undefined);   // undefined
 
 ### 코드예시
 ```javascript
-let objOne = { one : 1 }
-let objTwo = { two : 2 }
+var objOne = { one : 1 }
+var objTwo = { two : 2 }
 
 objTwo = objOne;
 
@@ -95,7 +95,7 @@ console.log(objOne);  //  [object Object] { one : 3 }
 
 ### 코드예시
 ```javascript
-let name = "bit";
+var name = "bit";
 
 console.log(name.concat("coin"))  // "bitcoin"
 
@@ -103,24 +103,24 @@ console.log(name.concat("coin"))  // "bitcoin"
 ```
 * 위 코드의 자바스크립트 내부적 처리 과정(오토박싱 과정)
   ```javascript
-  let name = "bit";
-  let temp = new String(name);      // 원시타입을 객체처럼 사용하는 순간 임시적으로 생성되는 인스턴스
+  var name = "bit";
+  var temp = new String(name);      // 원시타입을 객체처럼 사용하는 순간 임시적으로 생성되는 인스턴스
   console.log(temp.concat("coin")   // 그리고 console.log 가 인스턴스와 함께 실행됨
   temp = null;                      // 볼일을 마쳤으니 인스턴스는 파괴된다.
   ```
 * 오토박싱 추가 코드 예시
   ```javascript
-  let name = "bit";
+  var name = "bit";
   name.coin = "coin";
   console.log(name.coin);     // undefined
   
   // 풀이과정
-  let name = "bit";
-  let temp = new String(name);    // 객체처럼 사용하려하니 생성된 인스턴스
+  var name = "bit";
+  var temp = new String(name);    // 객체처럼 사용하려하니 생성된 인스턴스
   temp.coin = "coin";             // 객체처럼 사용
   temp = null;                    // 사용되었으니 다시 파괴
   
-  let temp = new String(name);    // 바로 아래에서 객체처럼 사용하려하니 새로 다시 생성된 인스턴스
+  var temp = new String(name);    // 바로 아래에서 객체처럼 사용하려하니 새로 다시 생성된 인스턴스
   console.log(temp.coin);         // 이전에 파괴된 인스턴스에는 값이 할당 되었지만 이번에 다시 생성된 인스턴스(temp)에는 할당된 값이 없음!
                                   // 그래서 undefined 가 출력 됨
   ```
@@ -136,7 +136,7 @@ console.log(name.concat("coin"))  // "bitcoin"
 # this
 ## this가 존재하는 이유
 ```javascript
-let myDiner = {
+var myDiner = {
   name : '김치찌개',
   menu : function( ){
     console.log("오늘 저녁은" + myDiner.name);
@@ -155,11 +155,11 @@ function menuGlobal(item){
   console.log("오늘 저녁은" + item + this.name);
 }
 
-let myDiner = {
+var myDiner = {
   name : "김치찌개"
 }
 
-let yourDiner = {
+var yourDiner = {
   name : "된장찌개"
 }
 
@@ -180,11 +180,11 @@ function menuGlobal(item1, item2){
   }, this);  
 }
 
-let myDiner = {
+var myDiner = {
   name : "김치찌개"
 }
 
-let yourDiner = {
+var yourDiner = {
   name : "된장찌개"
 }
 
@@ -213,15 +213,15 @@ function menuGlobal(item){
   console.log("오늘 저녁은" + item + this.name);
 }
 
-let myDiner = {
+var myDiner = {
   name : "김치찌개"
 }
 
-let yourDiner = {
+var yourDiner = {
   name : "된장찌개"
 }
 
-let menuGlobalForMe = menuGlobal.bind(myDiner);
+var menuGlobalForMe = menuGlobal.bind(myDiner);
 
 console.log(menuGlobalForMe("묵은지"));  // "오늘 저녁은 묵은지김치찌개"
 
@@ -264,6 +264,108 @@ menuGlobal.apply(myDiner, ["묵은지", "삼겹살"]);
 
 
 ---
+
+# Scope (유효범위)
+* 변수의 접근성과 생존 기간을 제어한다.
+
+### 코드예시
+```javascript
+let func1 = function(){
+  var a = 1;
+  var b = 2;
+  console.log(a + b);
+  return a + b
+};
+
+let a = 20;
+
+// a가 1로 적용될까 20으로 적용될까?
+func1();  // 3
+
+```
+
+* 스코프는 이름이 충돌하는 문제를 덜어주고, 자동으로 메모리를 관리한다.
+
+
+## 자바스크립트의 유효범위(scope)
+* 전역 스코프
+* 함수 스코프
+* 블록 스코프(es6)
+
+## 전역 스코프
+* 스크립트 어디서든 접근이 가능하기 때문에 사용이 쉽다.
+* 타인과의 협업, 라이브러리 사용 시 충돌의 가능성이 있다.
+
+## 함수 스코프
+* 함수 내부에서 정의된 변수와 매개변수는 함수 외부에서 접근할 수 없다.
+* 함수 내부에서 정의된 변수라면 함수의 어느 부분에서도 접근 할 수 있다.
+
+
+### 코드 예시
+```javascript
+let func = function(){
+  var a = 1;
+  var b = 2;
+  
+  let func2 = function(){
+    var b = 5;
+    var c = 6;
+    
+    a = a + b + c;  // func2에서는 a가 정의되지 않았는데 에러가 안나는 이유는 
+                    // func 함수 내부 즉 해당 func2변수를 포함하고 있는 변수에서 
+                    // 정의를 해주었기 때문에 어디서든 접근 할 수 있다는 성질때문에 에러가 안남
+    
+    console.log(a);
+  };
+  func2();
+};
+
+func();  // 12
+```
+### 예시 2 (함수 내부 선언이 아닌 값이 할당된 변수는 전역변수로!)
+```javascript
+function test() {
+  hell = "low";
+  var hero = "world";
+}
+test()
+
+console.log(hero);    // error
+console.log(hell);    // "low"
+```
+hero는 함수 외부에서 접근이 안되는데 hell은 접근이 가능한 이유는 hero는 함수 내부에서 let으로 인해 선언이 되었지만, hell은 선언이 아니라 값이 할당이 되었다. 이처럼 함수 내부에서 선언이 아닌 할당만 된 변수는 전역변수로서 활용이 가능하다. 매우 중요한 예시
+
+
+
+## 블록 스코프
+* 중괄호 안에서만 접근 가능하다.
+* 블록 내부에 정의된 변수는 블록의 실행이 끝나면 해제된다.
+
+### 코드예시
+```javascript
+if(true){
+  var value = "hello";
+}
+console.log(value);      // "hello"
+
+if(true){
+  let value = "world";
+}
+console.log(value);      // "hello"
+```
+let은 블록 스코프 키워드이기 때문에 {}안에서만 존재하며 {} 외부에서 접근이 불가하다. 따라서 두번째 console.log(value)값 역시 처음 var로 선언한 hello 값이 출력이 된다.
+
+## 정리
+* 스코프는 변수의 접근성과 생존기간을 제어한다.
+* 스코프는 이름이 충돌하는 문제를 덜어주고, 자동으로 메모리를 관리한다.
+* 자바스크립트에는 전역 스코프, 함수 스코프, 블록 스코프가 존재한다.
+
+---
+
+
+
+
+
 
 
 
