@@ -131,6 +131,141 @@ console.log(name.concat("coin"))  // "bitcoin"
 * 원시 래퍼 타입은 String, Number, Boolean 이다.
 * 원시 래퍼 타입은 원시 타입을 객체처럼 사용할 수 있도록 한다.
 
+---
+
+# this
+## this가 존재하는 이유
+```javascript
+let myDiner = {
+  name : '김치찌개',
+  menu : function( ){
+    console.log("오늘 저녁은" + myDiner.name);
+  }
+}
+myDiner.menu();
+```
+위와 같은 객체가 있을 때 menu 함수는 myDiner 변수 이름이 수정될 경우나, menu 함수 자체를 다른 객체에서 사용하고 싶은 경우 사용이 불편하다.
+
+# this 제어하기
+## call()
+call 메서드는 this 의 값을 바꿀 수도 있고, 함수를 실행할 때 사용할 인수도 전달할 수 있습니다.
+### 코드예시
+```javascript
+function menuGlobal(item){
+  console.log("오늘 저녁은" + item + this.name);
+}
+
+let myDiner = {
+  name : "김치찌개"
+}
+
+let yourDiner = {
+  name : "된장찌개"
+}
+
+menuGlobal.call(myDiner, "묵은지");  // "오늘 저녁은 묵은지김치찌개"
+menuGlobal.call(yourDiner, "삼겹살");  // "오늘 저녁은 삼겹살김치찌개"
+```
+function.call(타겟객체, 넘겨줄 인자)   
+menuGlobal.call(myDiner, "묵은지") 의 경우 myDiner을 타겟으로 하여 this의 타겟이 잡히고 "묵은지"를 menueGlobal함수의   
+매개변수로 넘겨주어 위 같은 출력값을 얻게 된다.
+
+## apply()
+함수를 실행할 때 인수를 배열로 묶어 한번에 전달한다. 
+### 코드예시
+```javascript
+function menuGlobal(item1, item2){
+  [item1, item2].forEach(function(el){
+    console.log("오늘 저녁은" + el + this.name)
+  }, this);  
+}
+
+let myDiner = {
+  name : "김치찌개"
+}
+
+let yourDiner = {
+  name : "된장찌개"
+}
+
+menuGlobal.apply(myDiner,["묵은지", "삼겹살"]); 
+// 오늘 저녁은 묵은지김치찌개
+// 오늘 저녁은 삼겹살김치찌개
+
+menuGlobal.apply(yourDiner, ["두부", "애호박"]);
+// 오늘 저녁은 두부된장찌개
+// 오늘 저녁은 애호박된장찌개
+```
+forEach에서 두번째 인자에 this를 설정해 두지 않고 내부에 this 사용시 this는 객체를 찾기떄문에 자동으로 함수를 호출하는 객체를 바라보게 되는데 이때 함수를 호출하는 객체가 window 객체이기 때문에 window 객체를 타겟으로 설정하게 된다.(전역변수) 그렇기 때문에 forEach내부에서 this를 사용할때는 두번째 항에 this를 설정해 둔다.
+
+## call()과 apply()의 차이
+call은 함수를 실행 할 때 전달할 인수를 하나 하나 전달한다면   
+apply는 전달할 인수를 배열로 묶어 한번에 전달한다. 그래서 인수를 두개만 사용한다.(target으로 쓸 객체, 인자로 쓸 배열)   
+인수를 배열로 보낸다는 점 빼고는 call과 apply는 동일한 기능을 수행한다.
+
+
+## bind() 
+bind 메서드는 es5 에서 추가되었다.   
+this 값을 어디서 사용하든 호출 객체가 바뀌지 않게 고정시켜버린다.
+### 코드 예시
+```javascript
+function menuGlobal(item){
+  console.log("오늘 저녁은" + item + this.name);
+}
+
+let myDiner = {
+  name : "김치찌개"
+}
+
+let yourDiner = {
+  name : "된장찌개"
+}
+
+let menuGlobalForMe = menuGlobal.bind(myDiner);
+
+console.log(menuGlobalForMe("묵은지"));  // "오늘 저녁은 묵은지김치찌개"
+
+```
+menuGlobal.bind(myDiner) 로 인해 menuGlobal함수의 this 객체가 myDiner로 완전히 타겟팅되어 새롭게   
+menuGlobalForMe 변수에 할당되었다.
+
+## 화살표 함수와 this
+화살표 함수의 this는 일반적인 this처럼 함수를 호출한 객체를 할당하지 않고,   
+바로 상위 스코프의 this를 할당한다.
+
+### 코드예시
+```javascript
+function menuGlobal(item1, item2){
+  console.log(this);                 // [object Object] { name : "김치찌개" }
+  [item1, item2].forEach( (el) => {
+    console.log("오늘 저녁은" + el + this.name)
+  });
+}
+
+let myDiner = {
+  name : "김치찌개"
+}
+
+let yourDiner = {
+  name : "된장찌개"
+}
+
+menuGlobal.apply(myDiner, ["묵은지", "삼겹살"]); 
+```
+일반 function을 사용했을 때는 forEach 두번째 항에 this를 지정하여 window객체를 타겟으로 잡지 않도록 막았지만   
+화살표 함수를 사용했기 때문에 this는 바로 상위 스코프의 this를 할당하게 되어   
+자동으로 forEach의 상위 스코프인 myDiner 객체를 타겟으로 지정하여 console.log(this)에 name : "김치찌개"가 출력되었다.
+
+## 정리
+* **this는 함수를 호출하는 객체** 를 의미한다.
+* call과 apply는 this에 할당되는 객체를 지정할 수 있다.
+* Bind 메서드는 this에 할당되는 객체가 고정된 새로운 함수를 생성한다.
+* 화살표 함수에서 this는 상위 스코프의 객체를 할당받는다.
+
+
+---
+
+
 
 
 
