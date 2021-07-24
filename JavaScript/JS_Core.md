@@ -134,6 +134,7 @@ console.log(name.concat("coin"))  // "bitcoin"
 ---
 
 # this
+* 함수를 호출한 객체를 할당한다.
 ## this가 존재하는 이유
 ```javascript
 var myDiner = {
@@ -448,6 +449,99 @@ person.getAge();   // 15
 * 자바스크립트는 내부 함수에서 자신을 포함하는 외부 함수의 스코프에 접근 할 수 있다.
 * 내부 함수가 살아있는 상태에서 외부 함수가 파괴되면 외부 함수의 변수들에 대한 접근 권한은 내부 함수만 가지게 된다.
 * 이렇게 폐쇄된 공간(함수)에 대한 접근 권한을 가진 함수가 클로저 이다.
+
+---
+
+# 생성자 (new 연산자 & 함수)
+## 생성자란?
+* 앞에 new 연산자가 붙은 함수를 의미하며, 인스턴스를 만들 수 있다.
+* 예를들어 **new Object(), new Array()** 는 자바스크립트의 내부적으로 존재하는 내장 생성자이다.
+```javascript
+var myArray = new Array(1, 2, 3);
+
+console.log(myArray);  // [1, 2, 3]
+```
+
+* 사용자가 직접 새로운 타입을 만들 수도 있다.
+```javascript
+// 생성자 함수
+function MyOwn(){}
+
+var myObj = new MyOwn();
+//인스턴스    생성자
+```
+* 생성자와 인스턴스의 관계는 instanceof 와 constructor 메소드를 통해 확인할 수 있다.
+```javascript
+console.log(myObj instanceof MyOwn);  //true
+
+console.log(myObj.constructor === MyOwn); // true
+```
+
+## 생성자를 만드는 이유
+* 생성자의 중요한 기능 : 동일한 프로퍼티와 메소드를 가진 객체를 빠르게 **대량생산** 하는 것
+```javascript
+function Food(name){
+  this.name = name;
+  this.smell = function(){
+    console.log(this.name + " 냄새가 난다!");
+  }
+}
+
+var myFood1 = new Food("해물 파스타");
+var myFood2 = new Food("특제 파스타");
+var myFood3 = new Food("토마토 파스타");
+
+myFood1.smell();  // "해물 파스타 냄새가 난다!"
+myFood2.smell();  // "특제 파스타 냄새가 난다!"
+myFood3.smell();  // "토마토 파스타 냄새가 난다!"
+```
+
+## 생성자의 "new 연산자"
+new 연산자가 붙으면 함수의 this는 인스턴스를 참조하게 되며,   
+new 연산자가 없을 경우 생성자함수는 단순 평범한 함수이기 때문에 this 는 함수를 호출한 객체를 할당하게되어 window객체(전역객체)를 할당하게 되버린다.   
+그리고 new 연산자가 자동으로 인스턴스를 반환하기 때문에 함수안에 return 연산자도 필요 없어지게 된다.
+
+### 코드 예시
+```javascript
+function Food(name){
+  this.name = name;
+  this.smell = function(){
+    console.log(this.name + " 냄새가 난다!");
+  }
+}
+
+var myFood1 = Food("해물")
+
+console.log(myFood1.name)   // TypeError : Cannot read property 'name'
+
+myFood1.smell();  // TypeError : Cannot read property 'smell'
+
+// 그냥 함수 안에 console.log(this) 찍엇을 경우 window 객체가 할당되어 찍힘
+```
+
+## 정리
+* 생성자란 앞에 new 키워드가 붙은 함수를 의미한다.
+* 생성자의 중요 기능은 바로 동일한 프로퍼티와 메소드를 가진 객체를 쉽게 대량생산하는데 있다.
+* 생성자 함수의 new 연산자는 인스턴스를 참조한다.
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
