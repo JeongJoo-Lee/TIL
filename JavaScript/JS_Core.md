@@ -549,17 +549,74 @@ console.log(myFood1.smell() === myFood2.smell());  // false
 이렇게 되면 비효율적인 메모리할당이 발생하게 된다.   
 해당 코드를 효율적으로 바꿔 보자
 
+### 효율적 코드 예제
+```javascript
+function snell(){
+  console.log(this.name + "냄새가 난다.");
+}
+
+function Food(name){
+  this.name = name;
+  this.smell = smell;
+}
+
+var myFood = new Food("로제 파스타");          // "로제 파스타냄새가 난다."
+var myFood2 = new Food("명란젓");              // "명란젓냄새가 난다."
+myFood.smell();
+myFood2.smell();
+console.log(myFood.smell === myFood2.smell);   // true;
+
+```
+
+### 🟠 의문점
+```javascript
+console.log(myFood.constructor === Food);  // true
+```
+Food 라는 생성자를 만들때 .name 과 .smell 만 만들었는데 constructor는 어디서 나온건가??
+
+### 🟢 해답
+* 자바스크립트에서는 생성자의 prototype 프로퍼티를 통해 타입의 특징을 정의한다.
+
+앞서 본 constructor 메소드는 Object 타입의 프로퍼티이며 prototype에 의해 정의되었다.   
+**Object.prototype.constructor**
+
+### 🔴 모든 인스턴스는 내부에 [[Prototype]] 프로퍼티를 거지며 이를 통해 생성자의 prototype 프로퍼티를 추적한다.
+* 이미지 : myFood
+![image](https://user-images.githubusercontent.com/61656046/126896593-8f5afe54-c1b3-4ba7-bdf1-205a7ed9f8d8.png)
+
+## 🛠️ prototype을 사용해보자 ( ex: Object.prototype.constructor)
+### 코드 예제
+```javascript
+// 프로토타입으로 지정해버리기
+Food.prototype.smell = function(){
+  console.log(this.name + "냄새가 난다.");
+}
+
+// 프로토타입으로 smell을 설정했기때문에 더이상 this.smell을 적을 필요가 없어짐
+function Food(name){
+  this.name = name;
+}
+
+var myFood = new Food("로제 파스타");          // "로제 파스타냄새가 난다."
+var myFood2 = new Food("명란젓");              // "명란젓냄새가 난다."
+myFood.smell();
+myFood2.smell();
+console.log(myFood.smell === myFood2.smell);   // true;
 
 
+```
+### 🖼️ 그림 설명 (위 코드예제의 프로토타입 추적과정)
+![image](https://user-images.githubusercontent.com/61656046/126896766-b05e8572-11ef-4a72-9697-ec7e63c3914a.png)
+자신을 만든 Food 생성자의 constructor를 추적하고 Food의 생성자인(부모) Object의 constructor를 추적하여 그것을 사용했기때문에   
+위 의문점에서 따로 생성하지도 않은 myFood.constructor 를 활용할 수 있었던 것이다.
+* 이렇게 인스턴스에서 생성자의 [[Prototype]]을 타고 올라가며 프로퍼티를 탐색하는 현상을 **프로토타입 체인** 이라고 한다.
 
+## 💬 정리
+* 자바스크립트는 생성자의 prototype 프로퍼티를 통해 타입의 특징을 정의한다.
+* 모든 인스턴스는 내부에 [[Prototype]] 프로퍼티를 가지며 이를 통해 생성자의 prototype 프로퍼티를 추적한다.
+* 인스턴스에서 생성자의 [[Prototype]] 을 타고 올라가며 프로퍼티를 탐색하는 현상을 프로토타입 체인 이라고 한다.
 
-
-
-
-
-
-
-
+---
 
 
 
