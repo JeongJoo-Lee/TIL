@@ -581,7 +581,9 @@ Food 라는 생성자를 만들때 .name 과 .smell 만 만들었는데 construc
 **Object.prototype.constructor**
 
 ### 🔴 모든 인스턴스는 내부에 [[Prototype]] 프로퍼티를 거지며 이를 통해 생성자의 prototype 프로퍼티를 추적한다.
-* 이미지 : myFood
+* 이미지 : myFood   
+
+
 ![image](https://user-images.githubusercontent.com/61656046/126896593-8f5afe54-c1b3-4ba7-bdf1-205a7ed9f8d8.png)
 
 ## 🛠️ prototype을 사용해보자 ( ex: Object.prototype.constructor)
@@ -606,7 +608,7 @@ console.log(myFood.smell === myFood2.smell);   // true;
 
 ```
 ### 🖼️ 그림 설명 (위 코드예제의 프로토타입 추적과정)
-![image](https://user-images.githubusercontent.com/61656046/126896766-b05e8572-11ef-4a72-9697-ec7e63c3914a.png)
+![image](https://user-images.githubusercontent.com/61656046/126896766-b05e8572-11ef-4a72-9697-ec7e63c3914a.png)   
 자신을 만든 Food 생성자의 constructor를 추적하고 Food의 생성자인(부모) Object의 constructor를 추적하여 그것을 사용했기때문에   
 위 의문점에서 따로 생성하지도 않은 myFood.constructor 를 활용할 수 있었던 것이다.
 * 이렇게 인스턴스에서 생성자의 [[Prototype]]을 타고 올라가며 프로퍼티를 탐색하는 현상을 **프로토타입 체인** 이라고 한다.
