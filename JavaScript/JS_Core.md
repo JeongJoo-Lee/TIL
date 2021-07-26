@@ -621,5 +621,7 @@ console.log(myFood.smell === myFood2.smell);   // true;
 ---
 
 
+# 서브타입 & 슈퍼타입
+
 
 
