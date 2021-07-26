@@ -624,4 +624,18 @@ console.log(myFood.smell === myFood2.smell);   // true;
 # 서브타입 & 슈퍼타입
 
 
+## 정리
+* call이나 apply를 이용하여 인스턴스를 인수로 전달하고 프로퍼티를 상속받는 방법을 생성자 훔치기라고 한다.
+* Object.create() 메소드를 통해 인스턴스의 [[Prototype]] 대상을 지정 할 수 있다.
+* 자바스크립트에서는 상속받는 타입을 하위 타입(subtype), 상속하는 타입을 상위 타입(supertype)이라고 부른다.
+
+
+
+
+
+
+
+
+
+
 
