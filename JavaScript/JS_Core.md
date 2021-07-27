@@ -623,6 +623,23 @@ console.log(myFood.smell === myFood2.smell);   // true;
 
 # 서브타입 & 슈퍼타입
 
+```javascript
+function FireSausage(el1, el2, el3){
+  Sausage.call(this, el1, el2);
+  this.inside3 = el3;
+};
+
+FireSausage.prototype = Object.create(Sausage.prototype);
+FireSausage.prototype.constructor = FireSausage;
+
+FireSausage.prototype.flavor = function(){
+  return this.inside3 + "의 풍미도 있다.";
+};
+
+var mynewSausage = new FireSausagee("돼지고기", "마늘", "불맛");   
+
+console.log(myNewSausage.taste());   // "돼지고기와 마늘 맛이 난다!"
+```
 
 ## 정리
 * call이나 apply를 이용하여 인스턴스를 인수로 전달하고 프로퍼티를 상속받는 방법을 생성자 훔치기라고 한다.
