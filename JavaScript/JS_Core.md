@@ -718,10 +718,53 @@ console.log(classicFireSausage.taste());  // "소고기와 파 맛이 난다."
 console.log(classicFireSausage.inside1);  // "소고기"
 console.log(classicFireSausage.inside2);  // "파"
 ```
-이처럼 extends 연산자를 이용해 상위 타입의 프로퍼티를 상속 받는 것이 가능하다.
+이처럼 **extends** 연산자를 이용해 상위 타입의 프로퍼티를 상속 받는 것이 가능하다.
 
+이제 FireSausage 클래스만의 프로퍼티를 추가시켜 보자
+```javascript
+class FireSausage extends Sausage{      
+  constructor(el1, el2, el3){
+    this.inside3 = el3;
+  };
+  
+  flavor(){
+    return this.inside3 + "의 풍미도 있다.";
+  };
+}; 
 
+var classicFireSausage = new FireSausage("소고기", "파", "불맛");
 
+console.log(classicFireSausage.flavor());  // Reference Error : Must call super constructor in derived class before accessing...
+```
+### Reference Error가 발생한 이유
+자식 클래스에 constructor 함수를 선언하면 부모 클래스의 constructor 함수를 덮어쓴다.
+이를 해결하기 위해 **super 메소드**가 필요하며, **super 메소드는 슈퍼타입의 생성자를 호출한다.**
+
+### 코드 예제(super 메소드 사용)
+```javascript
+class FireSausage extends Sausage{      
+  constructor(el1, el2, el3){
+    super(el1, el2);    // <----------------- 여기서 super는 상위 클래스의 constructor 역할이다. Sausage의 constructor(el1, el2)와 동일
+    this.inside3 = el3;
+  };
+  
+  flavor(){
+    return this.inside3 + "의 풍미도 있다.";
+  };
+}; 
+
+var classicFireSausage = new FireSausage("소고기", "파", "불맛");
+
+console.log(classicFireSausage.flavor());  // "불맛의 풍미도 있다."
+```
+
+## 정리
+* 자바스크립트의 타입 생성 방법을 다른 언어와 비슷하도록 보기 쉽게 개선한 것이 바로 자바스크립트 클래스이다.
+* extends 연산자를 통해 상위 타입의 프로퍼티를 상속받는다.
+* super메소드를 통해 자식클래스의 생성자 함수가 부모 클래스의 생성자 함수를 덮어 씌우는것을 방지할 수 있다.
+* IE 에서는 지원하지 않는다...
+
+---
 
 
 
