@@ -647,6 +647,80 @@ console.log(myNewSausage.taste());   // "돼지고기와 마늘 맛이 난다!"
 * 자바스크립트에서는 상속받는 타입을 하위 타입(subtype), 상속하는 타입을 상위 타입(supertype)이라고 부른다.
 
 
+---
+
+# Class
+* **클래스** : 자바스크립트만의 사용자 정의 타입 생성방법을 다른 언어의 클래스 문법처럼 바꿔 준 것
+* 클래스는 정확히 생성자를 이용한 타입 생성과 그 결과가 일치한다. 코드 예제를 통해 확인해보자.
+### 코드 예제
+```javascript
+class User{
+  constructor(name){
+    this.name = name;
+  }
+  sayName(){
+    console.log(this.name);
+  }
+}
+
+var me = new User("Joo");
+
+me.sayName();  // "Joo"
+```
+### 위 코드예제를 Class 사용없이 만들어보기
+```javascript
+function UserOld(name){
+  this.name = name;
+};
+
+UserOld.prototype.sayName = function(){
+  console.log(this.name);
+};
+
+var me = new UserOld("Joo");
+
+me.sayName();  // "Joo"
+```
+
+두가지 코드예제를 통해 확인할 수 있듯이 동일한 결과가 나오게되었다.   
+
+클래스로 만든 객체를 콘솔로그로도 확인 해보자   <br>
+
+![image](https://user-images.githubusercontent.com/61656046/127343168-b2937fae-595d-455a-9474-ab7c42d5e65d.png)
+
+<br>
+
+이전에 만들던 방식과 동일하게 [[Prototype]]과 constructor가 찍히고 있다.
+
+이처럼 내부적인 동작은 동일하지만 더 보기 좋고 편리하게 개선된 문법을 슈가 신텍스(Syntactic sugar)라고 부른다.
+
+## Class에서 타입 상속하기
+### 코드 예제
+```javascript
+class Sausage{
+  constructor(el1, el2){
+    this.inside1 = el1;
+    this.inside2 = el2;
+  };
+  
+  taste(){
+    return this.inside1 + "와 " + this.inside2 + " 맛이 난다.";
+  };
+};
+
+var classicSausage = new Sausage("닭고기", "고추");
+console.log(classicSausage.taste());   // "닭고기와 고추 맛이 난다."
+
+class FireSausage extends Sausage{}; // Sausage 프로퍼티들을 상속받고 사용하겠다.(extends)
+
+var classicFireSausage = new FireSausage("소고기", "파");
+console.log(classicFireSausage.taste());  // "소고기와 파 맛이 난다."
+console.log(classicFireSausage.inside1);  // "소고기"
+console.log(classicFireSausage.inside2);  // "파"
+```
+이처럼 extends 연산자를 이용해 상위 타입의 프로퍼티를 상속 받는 것이 가능하다.
+
+
 
 
 
