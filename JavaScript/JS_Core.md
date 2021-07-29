@@ -1,4 +1,18 @@
-# ☑️ 타입 [*원시타입, *참조타입, *원시 래퍼 타입]
+# Javascript Core
+## 목차
+- [☑️타입 [*원시타입, *참조타입, *원시 래퍼 타입]](#------------------------------)
+- [☑️this](#--this)
+- [☑️ Scope (유효범위)](#---scope-------)
+- [☑️ 클로저(closure)](#-------closure-)
+- [☑️ 생성자 (new 연산자 & 함수)](#--------new----------)
+- [☑️ 프로토 타입(prototype)](#----------prototype-)
+- [☑️ 서브타입 & 슈퍼타입](#-서브타입-&-슈퍼타입)
+- [☑️ Class](#---class)
+- [☑️ Hoisting (호이스팅)](#---hoisting-(호이스팅))
+
+</br>
+
+# ☑️타입 [*원시타입, *참조타입, *원시 래퍼 타입]
 ## 🔴 원시타입
 * 있는 그대로 저장되는 데이터를 표현한다.
 ## 원시타입의 종류
@@ -134,7 +148,7 @@ console.log(name.concat("coin"))  // "bitcoin"
 
 ---
 
-# ☑️ this
+# ☑️this
 * 함수를 호출한 객체를 할당한다.
 ## this가 존재하는 이유
 ```javascript
@@ -621,7 +635,7 @@ console.log(myFood.smell === myFood2.smell);   // true;
 ---
 
 
-# 서브타입 & 슈퍼타입
+# ☑️ 서브타입 & 슈퍼타입
 
 ```javascript
 function FireSausage(el1, el2, el3){
