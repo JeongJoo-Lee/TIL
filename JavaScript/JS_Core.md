@@ -649,7 +649,7 @@ console.log(myNewSausage.taste());   // "돼지고기와 마늘 맛이 난다!"
 
 ---
 
-# Class
+# ☑️ Class
 * **클래스** : 자바스크립트만의 사용자 정의 타입 생성방법을 다른 언어의 클래스 문법처럼 바꿔 준 것
 * 클래스는 정확히 생성자를 이용한 타입 생성과 그 결과가 일치한다. 코드 예제를 통해 확인해보자.
 ### 코드 예제
@@ -694,7 +694,7 @@ me.sayName();  // "Joo"
 
 이처럼 내부적인 동작은 동일하지만 더 보기 좋고 편리하게 개선된 문법을 슈가 신텍스(Syntactic sugar)라고 부른다.
 
-## Class에서 타입 상속하기
+## 🔴 Class에서 타입 상속하기
 ### 코드 예제
 ```javascript
 class Sausage{
@@ -736,7 +736,7 @@ var classicFireSausage = new FireSausage("소고기", "파", "불맛");
 
 console.log(classicFireSausage.flavor());  // Reference Error : Must call super constructor in derived class before accessing...
 ```
-### Reference Error가 발생한 이유
+### 🟢 Reference Error가 발생한 이유
 자식 클래스에 constructor 함수를 선언하면 부모 클래스의 constructor 함수를 덮어쓴다.
 이를 해결하기 위해 **super 메소드**가 필요하며, **super 메소드는 슈퍼타입의 생성자를 호출한다.**
 
@@ -758,13 +758,132 @@ var classicFireSausage = new FireSausage("소고기", "파", "불맛");
 console.log(classicFireSausage.flavor());  // "불맛의 풍미도 있다."
 ```
 
-## 정리
+## 💬 정리
 * 자바스크립트의 타입 생성 방법을 다른 언어와 비슷하도록 보기 쉽게 개선한 것이 바로 자바스크립트 클래스이다.
 * extends 연산자를 통해 상위 타입의 프로퍼티를 상속받는다.
 * super메소드를 통해 자식클래스의 생성자 함수가 부모 클래스의 생성자 함수를 덮어 씌우는것을 방지할 수 있다.
 * IE 에서는 지원하지 않는다...
 
 ---
+
+# ☑️ Hoisting (호이스팅)
+
+### ‼️ 호이스팅 테스트(1)
+* 두 코드는 정상적으로 작동 할까?
+
+```javascript
+console.log(test());
+console.log(testValue());
+
+function test(){
+  return "test";
+};
+
+var testValue = function(){
+  return "testValue";
+};
+```
+* 결과
+```javascript
+"test"   // console.log(test()); 성공
+
+"TypeError : *testValue is not a function ..."    // console.log(testValue()); 실패
+```
+##  함수에는 두가지 리터럴 형태가 있다.
+### 🟠 함수 선언
+* 함수 선언은 function 키워드 뒤로 함수의 이름을 적어서 사용한다.
+  ```javascript
+  function test(){
+    return "test";
+  };
+  ```
+  
+### 🟠 함수 표현식
+* 함수 표현식은 function 키워드 뒤로 이름을 적지 않고 사용한다. 이름이 없기 때문에 익명 함수라고 부르기도 한다.
+
+  ```javascript
+  var testValue = function(){
+    return "testValue";
+  };
+  ```
+* 함수선언은 코드를 실행할 때 함수를 포함하는 스코프 최상단으로 끌어올려 진다.   
+* 그림 예시
+  ![image](https://user-images.githubusercontent.com/61656046/127510751-1604f93b-78cb-4d99-a26c-699daae912cd.png)
+
+* 그에 반해 함수 표현식은 변수를 통해서 함수를 참조하기 때문에 호이스팅이 일어나지 않는다.
+  * 왜 표현식은 호이스팅이 일어나지 않을까? 변수를 살펴보자
+
+### ‼️ 호이스팅 테스트(2) : 변수
+```javascript
+console.log(undeclared);      // "error" : "Reference Error : undeclared is not defined..."
+console.log(testValue);       // undefined
+
+var testValue = 100;
+```
+* 선언하지 않은 변수(declared)는 당연히 Reference Error가 난다.
+* 하지만 선언한 변수도 "값" 까지 끌어올려지지는 않고 최초 메모리에 할당되는 undefined 만이 남을 뿐이다.(이름만)
+* 그렇기 떄문에 변수에 담긴 함수 표현식 역시 변수의 값에 해당하는 함수는 끌어올려 지지 않고 undefined 만 있기 때문에 함수실행이 되지 않는다!
+
+### ‼️ 호이스팅 테스트(3) : 표현식같은 함수 선언
+* 함수 선언을 표현식 처럼 사용한 경우는 어떻게 될까?
+```javascript
+console.log(testValueVar());        // "TypeError : testValueVar is not a function..."
+
+var testValueVar = function testValue(){
+  return "hoist test";
+};
+```
+* testValueVar = undefined로 호이스팅 되기때문에 함수로서 사용할 수 없다.
+* **변수는 함수와 달리 선언만 끌어올려진다!!**(undefined)
+
+### ‼️ 호이스팅 테스트(4) : 조건문 내부 선언
+* if문에서 변수의 선언과 초기화가 이뤄지는 경우는 어떻게?
+```javascript
+console.log(test);         // undefined
+
+var condition = false;
+if(condition){
+  var test = "this is test";
+};
+```
+* **에러가 나지 않은 이유** : if문은 함수가 아니다. 근데 안에 var 로 선언되었으니 그냥 전역스코프 라고 볼수 있고 test 변수가 호이스팅 되어 undefined 가 출력되었다.
+
+### ‼️ 호이스팅 테스트(5) : 함수 내부에서의 변수선언
+```javascript
+console.log(test());       // "hoist test"
+console.log(value);        // "Reference Error : value is not defined"
+
+function test(){
+  var value = "hoist";
+  return value + " test";
+};
+```
+* value 변수는 함수 안에서만 선언된 지역변수이기 때문에 끌어올려져도(본인이속한공간의 최상단) 함수 내부에서 최상단으로 끌어올려지기때문에 외부에서 접근 할 수 없다.
+
+## 🔴 호이스팅이 되지 않는 선언들
+```javascript
+console.log(test1);         // "error" "ReferenceError : Cannot access 'test1'. before initialization at...."
+console.log(test2);         // "error" "ReferenceError : Cannot access 'test1'. before initialization at...."
+console.log(Tester);        // "error" "ReferenceError : Cannot access 'test1'. before initialization at...."
+
+let test1 = "let value";
+const test2 = "const value";
+
+class Tester{
+  constructor(){
+    this.name = "test";
+  };
+};
+```
+### 🟠 블록스코프를 생성하는 let, const는 호이스팅이 일어나지 않는다. class또한 마찬가지
+**var** 로 선언된 변수는 호이스팅 되지만 **let, const**로 선언된 변수와 상수는 **TDZ**(**T**emporal **D**ead **Z**one. 임시 접근 불가구역) 구역에 배치된다.   
+이 값들은 선언이 실행된 후에 **TDZ**에서 제거되어 사용 가능한 상태가 된다.
+
+
+## 💬 정리
+* 함수 선언과 변수 선언은 코드를 실행할 때 해당 선언 스코프 최상단으로 끌어올려진다. 이런 현상을 호이스팅이라고 한다.
+* 선언한 변수의 값은 끌어올려지지 않는다.
+* let, const, class 선언은 호이스팅 현상이 일어나지 않는다.
 
 
 
