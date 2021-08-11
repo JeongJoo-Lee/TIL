@@ -75,6 +75,36 @@
 * DOM은 자바스크립트 노드 객체의 계층화된 트리이다.
 * 노드의 종류에는 document, element, text, comment 등이 있다.
 
+---
+
+# ☑️ 브라우저 렌더링 과정
+## 🔴 웹 브라우저의 기본 구조
+![image](https://user-images.githubusercontent.com/61656046/129050347-0180ccf4-1b1d-464f-8115-63f12f004363.png)
+
+
+## 🔴 렌더링 엔진이 하는 일
+### 🟡 1. 파싱
+HTML을 파싱하여 DOM으로 변환한다.   
+![image](https://user-images.githubusercontent.com/61656046/129050840-2ec6c582-49e6-47ec-8fb5-25ee23a83e24.png)   
+* 오타 혹은 잘못된 문법을 사용했을 경우 예외처리를 한다.
+* <link>, <img> 와 같은 태그를 만나면 리소스를 다운로드 한다.
+* <script> 태그를 만나면 DOM 파싱을 중단하고 자바스크립트를 해석한다.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
