@@ -1,3 +1,12 @@
+# 목차
+[☑️ BOM & DOM & Node]()
+[☑️ 브라우저 렌더링 과정]()
+
+
+
+---
+
+
 # ☑️ BOM & DOM & Node
 ## 🔴 BOM(Browser Object Model)
 * 웹 브라우저의 다양한 기능을 객체처럼 다루는 모델
