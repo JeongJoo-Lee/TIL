@@ -3,6 +3,7 @@
 * [☑️ 브라우저 렌더링 과정](#%EF%B8%8F-브라우저-렌더링-과정)
 * [☑️ 리플로우 & 리페인트](#%EF%B8%8F-리플로우--리페인트)
 * [☑️ 이벤트 흐름](#%EF%B8%8F-이벤트-흐름)
+* [☑️ 이벤트 위임](#%EF%B8%8F-이벤트-위임)
 
 
 
@@ -238,3 +239,49 @@ CSS를 파싱하여 CSSOM으로 변환한다.
 ## 💬 정리
 ![image](https://user-images.githubusercontent.com/61656046/129450530-52a39e1a-8711-4ba3-83dc-bb79e84e00ea.png)
 
+---
+
+# ☑️ 이벤트 위임
+## 🔴 만약 이벤트 리스너가 div 요소에 있고 사용자가 부모 요소 div의 자식인 button 태그를 클릭했다면?
+ 
+ * 브라우저는 이벤트가 발생한 button 태그를 찾기 시작할 것이고 이벤트 캡쳐링과 버블링을 통해 button 태그의 부모요소인 div의 이벤트 리스너를 실행 시킬 것이다.
+ ![image](https://user-images.githubusercontent.com/61656046/132151739-214f6550-77d5-4143-8f3a-6e733a23ded1.png)   
+ 
+## 🟡 이때 event 객체에는 돔에서 일어나는 이벤트의 정보가 들어있습니다.
+* event.currentTarget 은 이벤트가 등록된 요소를 가리킨다. 이는 이벤트 리스너 안의 this가 참조하는 대상과 같다. 그리고 이벤트가 최초에 발행한 요소는 event.target에 참조된다.
+![image](https://user-images.githubusercontent.com/61656046/132152338-adedb58e-122f-486c-8541-ccd915ecc557.png)
+
+
+### 코드예시
+```javascript
+<body>
+ <div class="parent">
+  <button type="button">generate item</button>
+  <ul>
+   <li>initial item</li>
+  </ul>
+ </div>
+ <script>
+  const parent = document.querySelector(".parent");
+  
+  parent.addEventListener('click', function(event){
+   if(event.target.tagName.toLowerCase() === 'button'){
+    const item = document.createElement('li');
+    item.innerText = "hello world~";
+    parent.querySelector('ul').appendChild(item);
+   }
+   if(event.target.tagName.toLowerCase() === 'li'){
+    console.log('hit!!!');
+   }
+  });
+ </script>
+</body>
+```
+ 
+* 즉, 이벤트를 발생시키고 싶은 요소를 이벤트 리스너가 설치된 부모 요소의 자식으로 배치한다면 그 요소가 몇개든 상관없이 이벤트를 등록할 수 있다.
+* 또한 요소가 동적으로 생성되어 계속 추가되어도 같은 기능을 유지한다.
+* 이렇게 이벤트 흐름을 활용하여 단일 이벤트 리스너가 여러개의 이벤트 대상을 처리할 수 있게 하는 프로그래밍을 이벤트 위임이라고 한다.
+
+## 💬 정리
+* 이벤트 흐름은 특정 이벤트가 발생 하였을 때, 해당 이벤트가 발생한 요소를 찾는 과정에서 만나는 모든 이벤트 리스너를 실행한다.
+* 이러한 이벤트 흐름의 특징을 이용하여 단일 이벤트 리스너가 여러개의 이벤트 대상을 처리할 수 있게 만드는 프로그래밍 방법을 이벤트 위임이라고 한다.
