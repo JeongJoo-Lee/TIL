@@ -180,7 +180,7 @@ var yourDiner = {
 }
 
 menuGlobal.call(myDiner, "묵은지");  // "오늘 저녁은 묵은지김치찌개"
-menuGlobal.call(yourDiner, "삼겹살");  // "오늘 저녁은 삼겹살김치찌개"
+menuGlobal.call(yourDiner, "삼겹살");  // "오늘 저녁은 삼겹살된장찌개"
 ```
 function.call(타겟객체, 넘겨줄 인자)   
 menuGlobal.call(myDiner, "묵은지") 의 경우 myDiner을 타겟으로 하여 this의 타겟이 잡히고 "묵은지"를 menueGlobal함수의   
