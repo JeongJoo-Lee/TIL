@@ -57,7 +57,7 @@
 
 
 ### 자료구조
-* [우선순위 큐, 자바스크립트로 구현하기(heap)]()
+* [우선순위 큐, 자바스크립트로 구현하기(heap)](https://github.com/joometa/TIL/blob/main/%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0/priority_queue.md)
 
 ### Algorithm
 * [[Programmers] 키패드 누르기(feat. javascript)](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/programmers_%ED%82%A4%ED%8C%A8%EB%93%9C%EB%88%84%EB%A5%B4%EA%B8%B0.md)
