@@ -56,6 +56,9 @@
 * [sys.stdin.readline( ) 사용법](https://github.com/JeongJoo-Lee/TIL/blob/main/Python/sys.stdin.readline()%20%EC%82%AC%EC%9A%A9%EB%B2%95.md)
 
 
+### 자료구조
+* [우선순위 큐, 자바스크립트로 구현하기(heap)]()
+
 ### Algorithm
 * [[Programmers] 키패드 누르기(feat. javascript)](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/programmers_%ED%82%A4%ED%8C%A8%EB%93%9C%EB%88%84%EB%A5%B4%EA%B8%B0.md)
 * [[Programmers] 폰켓몬(feat. javascript)](https://github.com/JeongJoo-Lee/TIL/blob/main/Algorithm/programmers_%ED%8F%B0%EC%BC%93%EB%AA%AC.md)
